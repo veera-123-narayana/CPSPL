@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Shield, Lock, Mail, Eye, EyeOff, ArrowRight, AlertCircle, Database, CheckCircle2, UserCheck } from 'lucide-react';
-import { api } from '../../services/api';
+import { api, setAdminToken } from '../../services/api';
 import { getSupabaseConfig, supabaseAdminLogin, AUTHORIZED_ADMIN_EMAIL } from '../../services/supabase';
 import { sounds } from '../../audio/sounds';
 
@@ -64,7 +64,7 @@ export default function AdminLogin({ onLoginSuccess }) {
             role: 'ADMIN',
             institution: 'N.B.K.R.I.S.T (Autonomous)'
           };
-          api.setAdminToken('innovrush_static_admin_token_2026');
+          setAdminToken('innovrush_static_admin_token_2026');
           if (onLoginSuccess) {
             onLoginSuccess(offlineAdmin);
           }
@@ -79,12 +79,6 @@ export default function AdminLogin({ onLoginSuccess }) {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleAutofill = () => {
-    setEmail('admin@innovrush.nbkrist.org');
-    setPassword('InnovRush@2026!');
-    setError(null);
   };
 
   return (
@@ -143,18 +137,9 @@ export default function AdminLogin({ onLoginSuccess }) {
         <form onSubmit={handleSubmit} className="space-y-3.5">
           {/* Email */}
           <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="block text-[10px] font-mono uppercase text-mutedsilver">
-                Authorized Administrator Email
-              </label>
-              <button
-                type="button"
-                onClick={handleAutofill}
-                className="text-[10px] font-mono text-metallic-gold hover:text-metallic-bright underline decoration-dotted"
-              >
-                Autofill Credentials
-              </button>
-            </div>
+            <label className="block text-[10px] font-mono uppercase text-mutedsilver mb-1">
+              Authorized Administrator Email
+            </label>
             <div className="relative">
               <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-mutedsilver" />
               <input

@@ -87,6 +87,9 @@ export const api = {
   getPublicConstraints: () => request('/public/constraints').catch(() => []),
 
   // Admin APIs
+  setAdminToken,
+  getAdminToken,
+  clearAdminToken,
   adminLogin: async (email, password) => {
     const res = await request('/admin/login', {
       method: 'POST',
