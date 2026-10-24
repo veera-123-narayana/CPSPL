@@ -1,0 +1,983 @@
+{
+  "event": {
+    "eventId": "INNOVRUSH-2K26",
+    "name": "INNOVRUSH 2K26",
+    "tagline": "Cinematic Problem Statement Launch Platform",
+    "institution": "N.B.K.R. Institute of Science & Technology (Autonomous)",
+    "association": "NEXUSVERSE 2K26",
+    "eventDate": "29 OCT 2026",
+    "eventTime": "9:00 AM",
+    "contactEmail": "nexusverse@nbkrist.org",
+    "instagram": "nexusverse_ieee",
+    "coordinators": [
+      {
+        "role": "Event Co-ordinator",
+        "name": "P. Veera Narayana",
+        "phone": "9848635931"
+      },
+      {
+        "role": "Event Co-ordinator",
+        "name": "N. Snehalatha",
+        "phone": "7674010261"
+      },
+      {
+        "role": "Event Co-ordinator",
+        "name": "M. Lekhasree",
+        "phone": "9347178378"
+      }
+    ],
+    "status": "CONSTRAINTS RELEASED",
+    "rules": {
+      "buildTimeMinutes": 90,
+      "teamSizeDiscrepancy": true,
+      "teamSizeConfirmed": true,
+      "teamSizeStatus": "Organizer Confirmed: 1–2 members per team",
+      "teamSizeDiscrepancyNote": "Confirmed by organizing committee for NEXUSVERSE 2K26 INNOVRUSH.",
+      "approvedTeamSize": "1–2 members per team",
+      "evaluation": {
+        "presentationWeight": 60,
+        "prototypeWeight": 40,
+        "prototypeEvaluator": "Evaluated by AI",
+        "additionalCriteriaNote": "Not specified in the event document."
+      }
+    },
+    "createdAt": "2026-10-22T16:53:17.127Z",
+    "updatedAt": "2026-10-24T05:22:36.490Z"
+  },
+  "timer": {
+    "status": "RUNNING",
+    "durationSeconds": 5400,
+    "plannedStartAt": "2026-10-29T09:00:00.000Z",
+    "startedAt": "2026-10-24T05:22:36.472Z",
+    "pausedAt": null,
+    "accumulatedPausedSeconds": 0,
+    "endedAt": null,
+    "updatedAt": "2026-10-24T05:22:36.472Z"
+  },
+  "problems": [
+    {
+      "problemId": "PS-01",
+      "title": "AI-Based Student Early Warning System",
+      "domain": "AI / MACHINE LEARNING",
+      "summary": "Academic risk prediction system utilizing attendance records, test marks, and assignment indicators to forecast student risk levels with explanations and actionable intervention recommendations.",
+      "problemDescription": "Educational institutions require proactive identification of students who may be at risk of academic failure or dropping out. An AI-based early warning system evaluates key longitudinal student data points including continuous attendance records, internal exam marks, and submission timelines for assignments to detect early patterns of academic distress.",
+      "challenge": "Design and implement an intelligent predictive system that evaluates academic indicators, quantifies risk probabilities, provides clear interpretability/explanations for flagged risk factors, and recommends specific academic interventions.",
+      "expectedOutput": "A functional AI risk assessment engine and dashboard that ingests student academic and attendance indicators, computes normalized risk scores (Low, Moderate, High), highlights root contributing factors for each student, and generates structured intervention guidance for faculty mentors.",
+      "functionalScope": [
+        "Multi-metric risk scoring using attendance, test scores, and assignment completion velocity",
+        "Risk explanation breakdown detailing specific drop-off triggers",
+        "Actionable recommendations and remediation plans for at-risk cohorts",
+        "Student and mentor view showing risk trajectory over time"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "PUBLISHED",
+      "publishedAt": "2026-10-24T05:22:36.456Z",
+      "createdAt": "2026-10-22T16:53:17.123Z",
+      "updatedAt": "2026-10-24T05:22:36.456Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-02",
+      "title": "AI-Powered Resume & Job Matching System",
+      "domain": "AI / MACHINE LEARNING",
+      "summary": "Intelligent career alignment engine analyzing candidate resumes against job descriptions to compute compatibility scores, highlight matched proficiencies, and pinpoint skill gaps.",
+      "problemDescription": "Recruiters and students often struggle with manual alignment of technical proficiencies against detailed job specifications. This system performs semantic parsing and contextual extraction on candidate resumes and target job roles to calculate accurate match ratings and highlight missing prerequisites.",
+      "challenge": "Develop an AI parsing and semantic scoring module that ingests resume texts and job descriptions, extracts competencies, benchmarks alignment, and provides detailed skill gap diagnostics.",
+      "expectedOutput": "A functional matching engine generating percentage compatibility ratings, itemized breakdown of matching technical and non-technical skills, and actionable recommendations for missing requirements.",
+      "functionalScope": [
+        "Resume and job description text parsing and entity extraction",
+        "Contextual skill matching and weighted compatibility scoring",
+        "Identification of missing prerequisites and curriculum gaps",
+        "Personalized skill enhancement suggestions based on industry demand"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:51.126Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-03",
+      "title": "AI-Powered Campus Support Assistant",
+      "domain": "AI / MACHINE LEARNING",
+      "summary": "Institutional conversational intelligence providing verified answers to student queries using institutional FAQs/documents while autonomously flagging unanswered questions.",
+      "problemDescription": "College administrative departments receive repetitive queries regarding academic regulations, examination schedules, fee structures, and campus services. This assistant grounds responses strictly in official college documentation and flags unaddressed or ambiguous questions for human staff review.",
+      "challenge": "Construct a grounded conversational assistant that accurately retrieves and articulates answers from institutional knowledge bases while logging fallback/unanswered queries for continuous knowledge base enrichment.",
+      "expectedOutput": "An interactive support interface that answers campus-related inquiries with high precision, cites institutional reference points, and maintains an administrative queue of unresolved queries.",
+      "functionalScope": [
+        "Document-grounded question answering for campus regulations and services",
+        "Strict hallucination guardrails preventing false campus information",
+        "Automated logging and classification of unanswered or ambiguous questions",
+        "Escalation workflow for administrative desk resolution"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:52.408Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-04",
+      "title": "Intelligent Phishing & Scam Detection",
+      "domain": "AI / MACHINE LEARNING",
+      "summary": "Cybersecurity classification engine evaluating suspicious URLs, communication payloads, and text snippets to detect malicious intent and alert users with risk indicators.",
+      "problemDescription": "Cyber threats, deceptive campus phishing emails, and predatory job scam messages increasingly target students and faculty. This solution inspects communication payloads, analyzes linguistic and structural anomalies, assesses domain legitimacy, and outputs real-time safety warnings.",
+      "challenge": "Build a machine-learning-driven classification pipeline that classifies URLs and text messages as legitimate or phishing, pinpointing specific suspicious signals such as spoofed domains or urgency tactics.",
+      "expectedOutput": "A real-time inspection tool that accepts message bodies or hyperlinks, provides instant classification (Safe, Suspicious, Malicious), and displays explicit risk factors explaining why the target was flagged.",
+      "functionalScope": [
+        "Feature extraction for lexical patterns, URL redirects, and deceptive phrasing",
+        "Probability score and risk categorization",
+        "Clear risk indicators (e.g., mismatched TLD, urgent credential requests)",
+        "User-friendly warning recommendations and safety tips"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:53.540Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-05",
+      "title": "Student Performance & Placement Analytics",
+      "domain": "DATA ANALYTICS",
+      "summary": "Comprehensive analytical dashboard visualizing department-wise academic indicators, placement trajectories, competency metrics, and multi-year institutional trends.",
+      "problemDescription": "Higher education leaders require holistic analytics to correlate undergraduate academic performance with final placement outcomes. This system aggregates academic evaluations, training completion metrics, and recruitment data into insightful department-level dashboards.",
+      "challenge": "Design and implement an analytical intelligence suite that computes essential KPIs, uncovers correlations between academic coursework and hiring success, and identifies student cohort strengths and weaknesses.",
+      "expectedOutput": "An interactive analytics dashboard showcasing key performance indicators, department-wise comparative charts, CGPA-to-placement conversion rates, and historical placement trend lines.",
+      "functionalScope": [
+        "Department-wise performance aggregation and benchmark comparison",
+        "Placement success metrics against CGPA bands and skill certifications",
+        "Multi-year hiring volume and salary distribution visual indicators",
+        "Exportable summary views for departmental review meetings"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:54.701Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-06",
+      "title": "Campus Resource Utilization Analytics",
+      "domain": "DATA ANALYTICS",
+      "summary": "Spatial and operational resource telemetry analyzing classroom, laboratory, and facility occupancy patterns to highlight underused facilities and optimize scheduling.",
+      "problemDescription": "Managing extensive physical infrastructure across engineering campuses requires continuous visibility into room and lab utilization. This analytics tool processes timetable, facility booking, and attendance data to reveal peak occupancy hours and identify underutilized campus spaces.",
+      "challenge": "Create a telemetry and analytics engine that models campus facility utilization over time, detects spatial bottlenecks during peak periods, and formulates automated reallocation suggestions.",
+      "expectedOutput": "A visual dashboard featuring occupancy heatmaps, time-series capacity utilization metrics, a list of underused infrastructure, and data-driven recommendations for scheduling optimization.",
+      "functionalScope": [
+        "Classroom and laboratory capacity vs. actual attendance tracking",
+        "Peak demand hour identification and facility saturation mapping",
+        "Underutilized infrastructure index and cost-saving opportunities",
+        "Scheduling optimization insights for administrative coordinators"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:56.471Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-07",
+      "title": "Smart Waste Analytics",
+      "domain": "DATA ANALYTICS",
+      "summary": "Ecological data analysis tracking campus waste volume, waste categorization, geographical hotspots, and time-based generation trends with reduction strategies.",
+      "problemDescription": "Achieving green campus benchmarks requires granular visibility into solid, food, and e-waste generation. This platform collects waste disposal logs across various campus zones (canteens, hostels, academic blocks) to identify disposal surges and guide sustainability interventions.",
+      "challenge": "Build a waste stream analytics platform that processes spatial and temporal waste metrics, identifies primary waste generation zones, and models the impact of targeted reduction initiatives.",
+      "expectedOutput": "A responsive environmental dashboard visualizing total waste volume by category (organic, plastic, paper, e-waste), zone-wise intensity maps, daily generation cycles, and measurable reduction suggestions.",
+      "functionalScope": [
+        "Waste generation telemetry classified by category, location, and timestamp",
+        "Temporal trend analysis showing peak generation hours and seasonal variance",
+        "Hotspot mapping across dining halls, residential blocks, and academic facilities",
+        "Actionable waste mitigation and resource diversion recommendations"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:29:57.593Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-08",
+      "title": "Placement Trend & Skill Gap Analyzer",
+      "domain": "DATA ANALYTICS",
+      "summary": "Labor market intelligence suite analyzing industry hiring patterns, compensation ranges, recruiter preferences, and technical skill supply-demand discrepancies.",
+      "problemDescription": "To ensure student employability, institutional training programs must adapt dynamically to evolving industry demands. This system evaluates historical placement records, corporate hiring requirements, and student skill profiles to uncover emerging hiring trends and pressing skill deficits.",
+      "challenge": "Develop an industry trend and curriculum gap analytical system that evaluates recruiting records, maps corporate compensation trends, and pinpoints where student competencies diverge from market demand.",
+      "expectedOutput": "An analytical platform delivering recruiter hiring distributions, compensation tier analysis, top in-demand technical competencies, and an actionable skill deficiency matrix.",
+      "functionalScope": [
+        "Recruiter participation, offer volume, and sector-wise hiring trends",
+        "Salary compensation breakdowns across engineering specializations",
+        "Competency demand mapping versus current student skill inventories",
+        "Targeted training intervention roadmap for career development cells"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:30:00.820Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-09",
+      "title": "Unified Smart Campus Platform",
+      "domain": "WEB DEVELOPMENT",
+      "summary": "Centralized responsive digital portal providing role-tailored student and faculty interfaces for notices, academic schedules, administrative workflows, and campus amenities.",
+      "problemDescription": "Campuses frequently suffer from fragmented portals for attendance, notices, grade books, and hall bookings. This platform unifies all vital academic and institutional operations into a single cohesive, high-performance web experience with dedicated roles for students and faculty.",
+      "challenge": "Architect a modern, unified web application featuring role-based dashboards, authenticated notice broadcasts, real-time timetable updates, and streamlined access to campus services.",
+      "expectedOutput": "A responsive, accessible web portal providing instant context switching between student and faculty views, an interactive announcements feed with search/filters, and intuitive service request modules.",
+      "functionalScope": [
+        "Role-tailored navigation and dashboards for students and faculty members",
+        "Official institutional notice board with category filters and prioritization",
+        "Academic schedule visualization and timetable management",
+        "Integrated quick links for campus services and student support"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:30:02.386Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-10",
+      "title": "Student Opportunities Hub",
+      "domain": "WEB DEVELOPMENT",
+      "summary": "Opportunity aggregation and lifecycle management portal tracking internships, hackathons, research grants, eligibility parameters, deadlines, and application status.",
+      "problemDescription": "Students constantly miss out on competitive hackathons, industry internships, and scholarships due to unorganized announcements scattered across social media and email threads. This hub categorizes verified opportunities, allows deadline tracking, and manages application statuses in one place.",
+      "challenge": "Design and implement a responsive opportunity portal that provides robust search, filtering by eligibility and category, personal bookmarks, and an interactive application pipeline tracker.",
+      "expectedOutput": "A web application featuring an opportunities feed with live countdowns to deadlines, detailed opportunity specification views, bookmarked opportunities, and stage-by-stage application tracking (Applied, Shortlisted, Interview, Accepted).",
+      "functionalScope": [
+        "Directory of internships, scholarships, and hackathons with verified criteria",
+        "Filtering by technical discipline, eligibility year, stipend, and deadlines",
+        "User bookmarks and custom notification alerts for approaching cut-offs",
+        "Interactive personal application tracker with status updating"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:30:03.572Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-11",
+      "title": "Campus Helpdesk & Complaint Management",
+      "domain": "WEB DEVELOPMENT",
+      "summary": "End-to-end ticketing and dispute resolution system with grievance filing, automated priority tagging, department routing, progress tracking, and resolution auditing.",
+      "problemDescription": "Efficient campus administration requires transparent tracking of infrastructure grievances (hostel maintenance, laboratory equipment repair, Wi-Fi connectivity, sanitation). This system delivers a structured ticketing pipeline connecting students with maintenance officers.",
+      "challenge": "Construct a robust issue reporting and management system supporting ticket generation with attachment uploads, priority categorization, department-based assignment, and real-time status progression.",
+      "expectedOutput": "A full-featured ticketing web portal enabling students to log grievances and monitor their resolution progress in real time, paired with an administrative interface for staff assignment and status updates.",
+      "functionalScope": [
+        "User grievance submission with category selection, description, and urgency",
+        "Automated ticket routing to relevant campus departments",
+        "Visual status lifecycle: Submitted -> In Progress -> Under Review -> Resolved",
+        "Departmental resolution notes, feedback ratings, and escalation tracking"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:30:04.906Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "problemId": "PS-12",
+      "title": "Campus Lost & Found",
+      "domain": "WEB DEVELOPMENT",
+      "summary": "Community-driven property recovery platform featuring categorized item reporting, timestamped locations, search indexing, potential match suggestions, and verification workflow.",
+      "problemDescription": "Lost identity cards, calculators, electronics, and keys are frequently misplaced across campus grounds with no streamlined return mechanism. This platform enables swift reporting of lost or discovered items, matches candidates using descriptive tags and locations, and facilitates safe item returns.",
+      "challenge": "Build a community web application that manages lost and found listings, indexes items by category/date/location, detects potential matches between lost and found logs, and secures ownership claim verification.",
+      "expectedOutput": "A responsive recovery portal showcasing active item feeds, search and tag filtering, report filing forms for lost and found items, match suggestion badges, and a secure claiming workflow.",
+      "functionalScope": [
+        "Structured report logging for both lost and found belongings",
+        "Granular filtering by item category, campus location, and incident date",
+        "Algorithmic candidate match indicator comparing lost descriptions with found items",
+        "Secure claim verification procedure and recovery status lifecycle"
+      ],
+      "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+      "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+      "publicationStatus": "DRAFT",
+      "publishedAt": "2026-10-23T14:29:58.035Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "updatedAt": "2026-10-23T17:30:06.935Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "updatedBy": "admin@innovrush.nbkrist.org"
+    }
+  ],
+  "constraints": [
+    {
+      "constraintId": "SC-01",
+      "scope": "ALL DOMAINS",
+      "problemId": null,
+      "title": "Resilient Offline Fallback Layer",
+      "description": "Prototypes must incorporate local caching or mock fallback data to maintain operational integrity in the event of upstream network timeouts or simulated API disconnections.",
+      "publicationStatus": "RELEASED",
+      "releasedAt": "2026-10-24T05:22:36.490Z",
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "releasedBy": "admin@innovrush.nbkrist.org"
+    },
+    {
+      "constraintId": "SC-02",
+      "scope": "AI / MACHINE LEARNING",
+      "problemId": "PS-01",
+      "title": "Sub-Second Inference Latency Guardrail",
+      "description": "The early warning assessment engine must return normalized risk levels and causal explanation breakdowns within 1.5 seconds per cohort query batch.",
+      "publicationStatus": "DRAFT",
+      "releasedAt": null,
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "releasedBy": null
+    },
+    {
+      "constraintId": "SC-03",
+      "scope": "WEB DEVELOPMENT",
+      "problemId": "PS-09",
+      "title": "Keyboard-First Accessibility Protocol",
+      "description": "All primary portal interactions (notice filtering, schedule switching, service requests) must be fully navigable via keyboard with distinct focus rings and zero mouse reliance.",
+      "publicationStatus": "DRAFT",
+      "releasedAt": null,
+      "createdAt": "2026-10-22T16:53:17.127Z",
+      "createdBy": "admin@innovrush.nbkrist.org",
+      "releasedBy": null
+    }
+  ],
+  "auditLog": [
+    {
+      "actionId": "act-1792819648628-17qbx",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T05:27:28.628Z",
+      "safeMetadata": {
+        "attemptedEmail": "intruder@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792819356493-ndas2",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-24T05:22:36.493Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792819356475-o3qcd",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T05:22:36.475Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T05:22:36.472Z"
+      }
+    },
+    {
+      "actionId": "act-1792819356458-ktm9e",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-24T05:22:36.458Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792819356436-vrtan",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T05:22:36.436Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792819356227-5inxm",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T05:22:36.227Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792818529369-alpd6",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_RESET",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T05:08:49.369Z",
+      "safeMetadata": {
+        "durationSeconds": 5400
+      }
+    },
+    {
+      "actionId": "act-1792818526074-qpjw0",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_ENDED_MANUALLY",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T05:08:46.074Z",
+      "safeMetadata": {
+        "endedAt": "2026-10-24T05:08:46.071Z"
+      }
+    },
+    {
+      "actionId": "act-1792818518109-v27xb",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T05:08:38.109Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792818458752-2eezx",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T05:07:38.752Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T05:07:38.749Z"
+      }
+    },
+    {
+      "actionId": "act-1792818451466-7n0tz",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T05:07:31.466Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792777460175-n92bu",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T17:44:20.175Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792777231150-bbly1",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T17:40:31.150Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792776606938-77b5e",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-12",
+      "timestamp": "2026-10-23T17:30:06.938Z",
+      "safeMetadata": {
+        "title": "Campus Lost & Found"
+      }
+    },
+    {
+      "actionId": "act-1792776604909-euqn6",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-11",
+      "timestamp": "2026-10-23T17:30:04.909Z",
+      "safeMetadata": {
+        "title": "Campus Helpdesk & Complaint Management"
+      }
+    },
+    {
+      "actionId": "act-1792776603576-l96he",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-10",
+      "timestamp": "2026-10-23T17:30:03.576Z",
+      "safeMetadata": {
+        "title": "Student Opportunities Hub"
+      }
+    },
+    {
+      "actionId": "act-1792776602388-d6w8m",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-09",
+      "timestamp": "2026-10-23T17:30:02.388Z",
+      "safeMetadata": {
+        "title": "Unified Smart Campus Platform"
+      }
+    },
+    {
+      "actionId": "act-1792776600824-chprw",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-08",
+      "timestamp": "2026-10-23T17:30:00.824Z",
+      "safeMetadata": {
+        "title": "Placement Trend & Skill Gap Analyzer"
+      }
+    },
+    {
+      "actionId": "act-1792776597596-9rmv0",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-07",
+      "timestamp": "2026-10-23T17:29:57.596Z",
+      "safeMetadata": {
+        "title": "Smart Waste Analytics"
+      }
+    },
+    {
+      "actionId": "act-1792776596474-qa95c",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-06",
+      "timestamp": "2026-10-23T17:29:56.474Z",
+      "safeMetadata": {
+        "title": "Campus Resource Utilization Analytics"
+      }
+    },
+    {
+      "actionId": "act-1792776594704-v0a7f",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-05",
+      "timestamp": "2026-10-23T17:29:54.704Z",
+      "safeMetadata": {
+        "title": "Student Performance & Placement Analytics"
+      }
+    },
+    {
+      "actionId": "act-1792776593543-jduq7",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-04",
+      "timestamp": "2026-10-23T17:29:53.543Z",
+      "safeMetadata": {
+        "title": "Intelligent Phishing & Scam Detection"
+      }
+    },
+    {
+      "actionId": "act-1792776592412-yd4xi",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-03",
+      "timestamp": "2026-10-23T17:29:52.412Z",
+      "safeMetadata": {
+        "title": "AI-Powered Campus Support Assistant"
+      }
+    },
+    {
+      "actionId": "act-1792776591129-t5i7h",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-02",
+      "timestamp": "2026-10-23T17:29:51.129Z",
+      "safeMetadata": {
+        "title": "AI-Powered Resume & Job Matching System"
+      }
+    },
+    {
+      "actionId": "act-1792776589475-jyhuf",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_UNPUBLISHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-23T17:29:49.475Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System"
+      }
+    },
+    {
+      "actionId": "act-1792776562984-pstbb",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T17:29:22.984Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792776506940-ujdnc",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T17:28:26.940Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792776103669-zkiic",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T17:21:43.669Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792772092166-kdhwr",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T16:14:52.166Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792769240853-adhkc",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T15:27:20.853Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792765798041-5ewea",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "BULK_PROBLEMS_LAUNCHED",
+      "targetId": "MULTIPLE",
+      "timestamp": "2026-10-23T14:29:58.041Z",
+      "safeMetadata": {
+        "count": 12
+      }
+    },
+    {
+      "actionId": "act-1792765786230-g4bn3",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T14:29:46.231Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792763277055-67m77",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-23T13:47:57.055Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792690105985-jq4p8",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:28:25.985Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689921688-cexfk",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "RULE_TEAM_SIZE_APPROVED",
+      "targetId": "RULES",
+      "timestamp": "2026-10-22T17:25:21.688Z",
+      "safeMetadata": {
+        "approvedSize": "1–2 members per team",
+        "note": "Confirmed by organizing committee for NEXUSVERSE 2K26 INNOVRUSH."
+      }
+    },
+    {
+      "actionId": "act-1792689912190-rjh13",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "EVENT_STATUS_CHANGED",
+      "targetId": "EVENT",
+      "timestamp": "2026-10-22T17:25:12.190Z",
+      "safeMetadata": {
+        "status": "WAITING FOR PROBLEM RELEASE"
+      }
+    },
+    {
+      "actionId": "act-1792689900496-yvx5b",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_RESET",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-22T17:25:00.496Z",
+      "safeMetadata": {
+        "durationSeconds": 5400
+      }
+    },
+    {
+      "actionId": "act-1792689893422-4dh17",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:24:53.422Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689876611-fpxzi",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_PAUSED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-22T17:24:36.611Z",
+      "safeMetadata": {
+        "pausedAt": "2026-10-22T17:24:36.607Z",
+        "remainingSeconds": 3554
+      }
+    },
+    {
+      "actionId": "act-1792689865677-fg1co",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:24:25.677Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689773524-ab85h",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-22T17:22:53.524Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792689773512-dgzmd",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-22T17:22:53.512Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-22T16:53:50.284Z"
+      }
+    },
+    {
+      "actionId": "act-1792689773499-c66bb",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-22T17:22:53.499Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792689773480-9cw1l",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:22:53.480Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689773351-19b77",
+      "administratorId": "unknown",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:22:53.351Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689563219-x5o17",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-22T17:19:23.219Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792689563201-t041d",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-22T17:19:23.201Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-22T16:53:50.284Z"
+      }
+    },
+    {
+      "actionId": "act-1792689563170-sjeum",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-22T17:19:23.170Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792689563134-u3teg",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:19:23.135Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792689562938-8xidv",
+      "administratorId": "unknown",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T17:19:22.938Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792688304275-j9w8o",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T16:58:24.275Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792688250691-4akcp",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T16:57:30.691Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792688030313-hkghp",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-22T16:53:50.313Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792688030288-q0poh",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-22T16:53:50.288Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-22T16:53:50.284Z"
+      }
+    },
+    {
+      "actionId": "act-1792688030265-wzybn",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-22T16:53:50.265Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792688030220-1ezq2",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T16:53:50.220Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792688030014-2jzvg",
+      "administratorId": "unknown",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-22T16:53:50.014Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-init-01",
+      "administratorId": "system",
+      "actionType": "SYSTEM_INITIALIZED",
+      "targetId": "INNOVRUSH-2K26",
+      "timestamp": "2026-10-22T16:53:17.127Z",
+      "safeMetadata": {
+        "note": "Platform initialized with 12 draft problem statements and 3 draft constraints."
+      }
+    }
+  ]
+}

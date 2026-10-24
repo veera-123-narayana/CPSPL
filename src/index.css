@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #D4A72C;
+    --gold-bright: #FFD84D;
+    --obsidian: #050607;
+    --deepspace: #090C10;
+  }
+
+  body {
+    background-color: #050607;
+    color: #F5F5F5;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom sleek scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090C10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A2518;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4A72C;
+  }
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(9, 12, 16, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 167, 44, 0.15);
+}
+
+.glass-panel-glow {
+  background: rgba(14, 18, 24, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 167, 44, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 167, 44, 0.12);
+}
+
+/* Metallic gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF0B3 0%, #FFD84D 25%, #D4A72C 70%, #9B771A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Perspective Floor Grid */
+.perspective-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 167, 44, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 167, 44, 0.08) 1px, transparent 1px);
+  transform: perspective(600px) rotateX(60deg);
+  transform-origin: center bottom;
+}
+
+/* Scanline overlay */
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.3)
+  );
+  background-size: 100% 4px;
+}
+
+/* 3D tilt utility */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
