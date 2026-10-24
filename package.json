@@ -9,6 +9,10 @@
     "client": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "node server/tests/index.js",
+    "test:unit": "node server/tests/unit.test.js",
+    "test:integration": "node server/tests/integration.test.js",
+    "test:load": "node server/tests/load-test.js",
     "test:security": "node server/security.test.js"
   },
   "dependencies": {
