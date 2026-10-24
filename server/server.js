@@ -50,11 +50,11 @@ const connectedClients = new Set();
 
 wss.on('connection', (ws) => {
   connectedClients.add(ws);
-  
+
   // Send initial sync payload
   const store = getStore();
   const remainingSeconds = calculateRemainingSeconds(store.timer);
-  
+
   ws.send(JSON.stringify({
     type: 'INITIAL_SYNC',
     serverTime: new Date().toISOString(),
@@ -165,7 +165,7 @@ export function requireAdminAuth(req, res, next) {
 app.get('/api/public/event', (req, res) => {
   const store = getStore();
   const publishedProblems = store.problems.filter(p => p.publicationStatus === 'PUBLISHED');
-  
+
   res.json({
     eventId: store.event.eventId,
     name: store.event.name,
@@ -226,7 +226,7 @@ app.get('/api/public/problems', (req, res) => {
 app.get('/api/public/problems/:problemId', (req, res) => {
   const store = getStore();
   const problem = store.problems.find(p => p.problemId.toUpperCase() === req.params.problemId.toUpperCase());
-  
+
   // Security Check: If it doesn't exist or is DRAFT, refuse to disclose!
   if (!problem || problem.publicationStatus !== 'PUBLISHED') {
     return res.status(404).json({
@@ -405,7 +405,7 @@ app.get('/api/admin/problems/:problemId', requireAdminAuth, (req, res) => {
 app.post('/api/admin/problems', requireAdminAuth, (req, res) => {
   const store = getStore();
   const { title, domain, summary, problemDescription, challenge, expectedOutput, functionalScope } = req.body;
-  
+
   if (!title || !domain || !challenge) {
     return res.status(400).json({ error: 'Title, domain, and challenge are required fields.' });
   }
@@ -536,8 +536,8 @@ app.post('/api/admin/problems/:problemId/unpublish', requireAdminAuth, (req, res
 app.post('/api/admin/problems/launch-all', requireAdminAuth, (req, res) => {
   const store = getStore();
   const { problemIds } = req.body;
-  const idsToLaunch = Array.isArray(problemIds) && problemIds.length > 0 
-    ? problemIds.map(id => id.toUpperCase()) 
+  const idsToLaunch = Array.isArray(problemIds) && problemIds.length > 0
+    ? problemIds.map(id => id.toUpperCase())
     : store.problems.map(p => p.problemId);
 
   let launchedCount = 0;
@@ -937,7 +937,7 @@ app.post('/api/admin/rules/team-size', requireAdminAuth, (req, res) => {
 app.post('/api/admin/event/status', requireAdminAuth, (req, res) => {
   const store = getStore();
   const { status } = req.body;
-  
+
   const validStatuses = [
     "EVENT NOT STARTED",
     "WAITING FOR PROBLEM RELEASE",

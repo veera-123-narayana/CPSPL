@@ -60,7 +60,7 @@ export default function AdminLogin({ onLoginSuccess }) {
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-12 z-10 relative">
       <div className="max-w-md w-full rounded-2xl bg-gradient-to-b from-deepspace to-obsidian border border-metallic-gold/35 p-8 shadow-gold-md backdrop-blur-xl relative overflow-hidden">
-        
+
         {/* Ambient Top Glow */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-metallic-bright to-transparent" />
         <div className="absolute -top-16 -right-16 w-36 h-36 bg-metallic-gold/10 rounded-full blur-2xl pointer-events-none" />
