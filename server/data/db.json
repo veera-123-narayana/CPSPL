@@ -52,7 +52,7 @@
     "pausedAt": null,
     "accumulatedPausedSeconds": 0,
     "endedAt": null,
-    "updatedAt": "2026-10-24T05:22:36.472Z"
+    "updatedAt": "2026-10-24T06:44:18.660Z"
   },
   "problems": [
     {
@@ -72,9 +72,9 @@
       "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
       "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
       "publicationStatus": "PUBLISHED",
-      "publishedAt": "2026-10-24T05:22:36.456Z",
+      "publishedAt": "2026-10-24T06:44:18.648Z",
       "createdAt": "2026-10-22T16:53:17.123Z",
-      "updatedAt": "2026-10-24T05:22:36.456Z",
+      "updatedAt": "2026-10-24T06:44:18.648Z",
       "createdBy": "admin@innovrush.nbkrist.org",
       "updatedBy": "admin@innovrush.nbkrist.org"
     },
@@ -340,7 +340,7 @@
       "title": "Resilient Offline Fallback Layer",
       "description": "Prototypes must incorporate local caching or mock fallback data to maintain operational integrity in the event of upstream network timeouts or simulated API disconnections.",
       "publicationStatus": "RELEASED",
-      "releasedAt": "2026-10-24T05:22:36.490Z",
+      "releasedAt": "2026-10-24T06:44:18.679Z",
       "createdAt": "2026-10-22T16:53:17.127Z",
       "createdBy": "admin@innovrush.nbkrist.org",
       "releasedBy": "admin@innovrush.nbkrist.org"
@@ -371,6 +371,72 @@
     }
   ],
   "auditLog": [
+    {
+      "actionId": "act-1792824258681-89vre",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-24T06:44:18.681Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792824258663-vqt77",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T06:44:18.663Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T05:22:36.472Z"
+      }
+    },
+    {
+      "actionId": "act-1792824258649-8eftb",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-24T06:44:18.649Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792824258633-9i9pl",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:44:18.633Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792824258477-atb9x",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:44:18.477Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792824061373-gvk8g",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:41:01.373Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
     {
       "actionId": "act-1792819648628-17qbx",
       "administratorId": "unknown",
