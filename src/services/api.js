@@ -78,7 +78,7 @@ function getStoredProblems() {
     const raw = localStorage.getItem(STORAGE_PROBLEMS_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed) && parsed.length >= 12) return parsed;
     }
   } catch (e) {
     console.warn('Error reading stored problems:', e);
@@ -267,10 +267,18 @@ export const api = {
   getPublicProblems: async () => {
     try {
       const data = await request('/public/problems');
-      return Array.isArray(data) && data.length > 0 ? data : getStoredProblems().filter(p => p.publicationStatus === 'PUBLISHED');
+      if (Array.isArray(data) && data.length >= 12) {
+        return data;
+      }
+      if (Array.isArray(data) && data.length > 0) {
+        const serverIds = new Set(data.map(p => p.problemId));
+        return [...data, ...defaultProblems.filter(p => !serverIds.has(p.problemId))];
+      }
     } catch {
-      return getStoredProblems().filter(p => p.publicationStatus === 'PUBLISHED');
+      // Netlify static fallback
     }
+    const stored = getStoredProblems();
+    return (Array.isArray(stored) && stored.length >= 12) ? stored : defaultProblems;
   },
 
   getPublicProblemDetail: async (problemId) => {
@@ -359,10 +367,16 @@ export const api = {
   getAdminProblems: async () => {
     try {
       const data = await request('/admin/problems');
-      return Array.isArray(data) && data.length > 0 ? data : getStoredProblems();
+      if (Array.isArray(data) && data.length >= 12) return data;
+      if (Array.isArray(data) && data.length > 0) {
+        const serverIds = new Set(data.map(p => p.problemId));
+        return [...data, ...defaultProblems.filter(p => !serverIds.has(p.problemId))];
+      }
     } catch {
-      return getStoredProblems();
+      // fallback
     }
+    const stored = getStoredProblems();
+    return (Array.isArray(stored) && stored.length >= 12) ? stored : defaultProblems;
   },
 
   getAdminProblemDetail: async (problemId) => {

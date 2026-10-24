@@ -1,6 +1,7 @@
 /**
- * INNOVRUSH 2K26 — Client Fallback Data for Static GitHub Pages Deployment
+ * INNOVRUSH 2K26 — Client Fallback Data for Static Netlify / GitHub Deployment
  * Provides seamless event data when the Node backend is not actively running.
+ * Exactly 12 Authoritative Problem Statements (4 per domain: AI/ML, Data Analytics, Web Dev).
  */
 
 export const defaultEventData = {
@@ -27,10 +28,10 @@ export const defaultEventData = {
   rules: {
     buildTimeMinutes: 90,
     teamSizeDiscrepancy: true,
-    teamSizeConfirmed: false,
-    teamSizeStatus: "Awaiting organizer confirmation",
-    teamSizeDiscrepancyNote: "Source document notes 1–2 members in Section A and 2–4 members (minimum 2) in Section B. Please confirm official interpretation in Admin settings.",
-    approvedTeamSize: "2–4 members (minimum 2)",
+    teamSizeConfirmed: true,
+    teamSizeStatus: "Organizer Confirmed: 1–2 members per team",
+    teamSizeDiscrepancyNote: "Confirmed by organizing committee for NEXUSVERSE 2K26 INNOVRUSH.",
+    approvedTeamSize: "1–2 members per team",
     evaluation: {
       presentationWeight: 60,
       prototypeWeight: 40,
@@ -49,6 +50,9 @@ export const defaultTimerData = {
 };
 
 export const defaultProblems = [
+  // ==========================================
+  // DOMAIN 1: AI / MACHINE LEARNING (4 Problems)
+  // ==========================================
   {
     problemId: "PS-01",
     title: "AI-Based Student Early Warning System",
@@ -89,15 +93,15 @@ export const defaultProblems = [
     problemId: "PS-03",
     title: "AI-Powered Campus Support Assistant",
     domain: "AI / MACHINE LEARNING",
-    summary: "Conversational intelligence agent delivering multi-modal support across institutional schedules, examination protocols, fee deadlines, and hostel facility queries.",
-    problemDescription: "Campus administration desks experience overwhelming repetitive query volumes regarding curriculum timetables, hall ticket eligibility, library hours, and departmental notices.",
-    challenge: "Construct a natural language understanding assistant that ingests structured and semi-structured campus policy docs, resolves inquiries in real time, and escalates complex edge cases.",
-    expectedOutput: "A conversational bot UI backed by an intent classifier or retrieval engine capable of answering institutional FAQs accurately and maintaining session dialogue context.",
+    summary: "Institutional conversational intelligence providing verified answers to student queries using institutional FAQs/documents while autonomously flagging unanswered questions.",
+    problemDescription: "College administrative departments receive repetitive queries regarding academic regulations, examination schedules, fee structures, and campus services. This assistant grounds responses strictly in official college documentation and flags unaddressed or ambiguous questions for human staff review.",
+    challenge: "Construct a grounded conversational assistant that accurately retrieves and articulates answers from institutional knowledge bases while logging fallback/unanswered queries for continuous knowledge base enrichment.",
+    expectedOutput: "An interactive support interface that answers campus-related inquiries with high precision, cites institutional reference points, and maintains an administrative queue of unresolved queries.",
     functionalScope: [
-      "Dynamic FAQ parsing across academic and campus services",
-      "Intent-based response dispatching with citation sources",
-      "Escalation ticket creation for unresolved queries",
-      "Multi-device conversational widget interface"
+      "Document-grounded question answering for campus regulations and services",
+      "Strict hallucination guardrails preventing false campus information",
+      "Automated logging and classification of unanswered or ambiguous questions",
+      "Escalation workflow for administrative desk resolution"
     ],
     rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
     evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
@@ -105,35 +109,39 @@ export const defaultProblems = [
   },
   {
     problemId: "PS-04",
-    title: "Automated Code Review & Security Scanner",
+    title: "Intelligent Phishing & Scam Detection",
     domain: "AI / MACHINE LEARNING",
-    summary: "Static analysis and vulnerability detection assistant scanning submitted source code for anti-patterns, security exploits, and code quality regressions.",
-    problemDescription: "Development workflows frequently suffer from unvetted code merges containing insecure patterns, SQL injection vectors, and hardcoded secrets.",
-    challenge: "Build a code analysis tool that parses code snippets, flags OWASP vulnerability risks, and suggests optimized refactored alternatives.",
-    expectedOutput: "A developer dashboard analyzing code inputs, providing confidence-rated vulnerability alerts, and generating line-by-line remediation diffs.",
+    summary: "Cybersecurity classification engine evaluating suspicious URLs, communication payloads, and text snippets to detect malicious intent and alert users with risk indicators.",
+    problemDescription: "Cyber threats, deceptive campus phishing emails, and predatory job scam messages increasingly target students and faculty. This solution inspects communication payloads, analyzes linguistic and structural anomalies, assesses domain legitimacy, and outputs real-time safety warnings.",
+    challenge: "Build a machine-learning-driven classification pipeline that classifies URLs and text messages as legitimate or phishing, pinpointing specific suspicious signals such as spoofed domains or urgency tactics.",
+    expectedOutput: "A real-time inspection tool that accepts message bodies or hyperlinks, provides instant classification (Safe, Suspicious, Malicious), and displays explicit risk factors explaining why the target was flagged.",
     functionalScope: [
-      "Static code linting and security vulnerability scanning",
-      "OWASP top-10 security flaw detection",
-      "Automated code remediation suggestion generation",
-      "Code quality scoring matrix"
+      "Feature extraction for lexical patterns, URL redirects, and deceptive phrasing",
+      "Probability score and risk categorization",
+      "Clear risk indicators (e.g., mismatched TLD, urgent credential requests)",
+      "User-friendly warning recommendations and safety tips"
     ],
     rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
     evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
     publicationStatus: "PUBLISHED"
   },
+
+  // ==========================================
+  // DOMAIN 2: DATA ANALYTICS (4 Problems)
+  // ==========================================
   {
     problemId: "PS-05",
-    title: "Zero-Trust API Gateway & Rate Sentinel",
-    domain: "CYBERSECURITY / SYSTEMS",
-    summary: "Hardened microservice proxy applying dynamic token verification, anomaly-based rate limiting, and automated threat mitigation.",
-    problemDescription: "Modern distributed APIs face aggressive automated credential stuffing, bot scraping, and DDoS attempts requiring low-latency zero-trust authorization.",
-    challenge: "Develop an API gateway layer enforcing strict JWT inspection, per-client sliding window rate throttling, and automated IP banishing on malicious payload patterns.",
-    expectedOutput: "A functional proxy engine that monitors incoming request velocity, validates authentication tokens, and blocks abusive clients with telemetry metrics.",
+    title: "Student Performance & Placement Analytics",
+    domain: "DATA ANALYTICS",
+    summary: "Comprehensive analytical dashboard visualizing department-wise academic indicators, placement trajectories, competency metrics, and multi-year institutional trends.",
+    problemDescription: "Higher education leaders require holistic analytics to correlate undergraduate academic performance with final placement outcomes. This system aggregates academic evaluations, training completion metrics, and recruitment data into insightful department-level dashboards.",
+    challenge: "Design and implement an analytical intelligence suite that computes essential KPIs, uncovers correlations between academic coursework and hiring success, and identifies student cohort strengths and weaknesses.",
+    expectedOutput: "An interactive analytics dashboard showcasing key performance indicators, department-wise comparative charts, CGPA-to-placement conversion rates, and historical placement trend lines.",
     functionalScope: [
-      "Cryptographic JWT verification and role enforcement",
-      "Sliding-window IP and token rate limiting",
-      "Suspicious payload sanitization and threat blocking",
-      "Real-time gateway request telemetry dashboard"
+      "Department-wise performance aggregation and benchmark comparison",
+      "Placement success metrics against CGPA bands and skill certifications",
+      "Multi-year hiring volume and salary distribution visual indicators",
+      "Exportable summary views for departmental review meetings"
     ],
     rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
     evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
@@ -141,17 +149,129 @@ export const defaultProblems = [
   },
   {
     problemId: "PS-06",
-    title: "Decentralized Credential Verification Protocol",
-    domain: "WEB3 / CLOUD / IOT",
-    summary: "Tamper-proof academic diploma and achievement verification network utilizing verifiable credentials and cryptographic proofs.",
-    problemDescription: "Fraudulent academic certificates and unverified paper degrees represent a persistent challenge for hiring authorities and university registrars.",
-    challenge: "Implement a digital credential issuance and instant public verification platform that binds verifiable certificates to cryptographic hashes.",
-    expectedOutput: "A verification portal where institutions issue signed digital credentials and employers verify authenticity via QR or hash lookup without third-party fees.",
+    title: "Campus Resource Utilization Analytics",
+    domain: "DATA ANALYTICS",
+    summary: "Spatial and operational resource telemetry analyzing classroom, laboratory, and facility occupancy patterns to highlight underused facilities and optimize scheduling.",
+    problemDescription: "Managing extensive physical infrastructure across engineering campuses requires continuous visibility into room and lab utilization. This analytics tool processes timetable, facility booking, and attendance data to reveal peak occupancy hours and identify underutilized campus spaces.",
+    challenge: "Create a telemetry and analytics engine that models campus facility utilization over time, detects spatial bottlenecks during peak periods, and formulates automated reallocation suggestions.",
+    expectedOutput: "A visual dashboard featuring occupancy heatmaps, time-series capacity utilization metrics, a list of underused infrastructure, and data-driven recommendations for scheduling optimization.",
     functionalScope: [
-      "Cryptographically signed certificate generation",
-      "Instant public QR verification without database vulnerability",
-      "Revocation registry and tamper-detection indicators",
-      "Exportable credential metadata conforming to open standards"
+      "Classroom and laboratory capacity vs. actual attendance tracking",
+      "Peak demand hour identification and facility saturation mapping",
+      "Underutilized infrastructure index and cost-saving opportunities",
+      "Scheduling optimization insights for administrative coordinators"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+  {
+    problemId: "PS-07",
+    title: "Smart Waste Analytics",
+    domain: "DATA ANALYTICS",
+    summary: "Ecological data analysis tracking campus waste volume, waste categorization, geographical hotspots, and time-based generation trends with reduction strategies.",
+    problemDescription: "Achieving green campus benchmarks requires granular visibility into solid, food, and e-waste generation. This platform collects waste disposal logs across various campus zones (canteens, hostels, academic blocks) to identify disposal surges and guide sustainability interventions.",
+    challenge: "Build a waste stream analytics platform that processes spatial and temporal waste metrics, identifies primary waste generation zones, and models the impact of targeted reduction initiatives.",
+    expectedOutput: "A responsive environmental dashboard visualizing total waste volume by category (organic, plastic, paper, e-waste), zone-wise intensity maps, daily generation cycles, and measurable reduction suggestions.",
+    functionalScope: [
+      "Waste generation telemetry classified by category, location, and timestamp",
+      "Temporal trend analysis showing peak generation hours and seasonal variance",
+      "Hotspot mapping across dining halls, residential blocks, and academic facilities",
+      "Actionable waste mitigation and resource diversion recommendations"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+  {
+    problemId: "PS-08",
+    title: "Placement Trend & Skill Gap Analyzer",
+    domain: "DATA ANALYTICS",
+    summary: "Labor market intelligence suite analyzing industry hiring patterns, compensation ranges, recruiter preferences, and technical skill supply-demand discrepancies.",
+    problemDescription: "To ensure student employability, institutional training programs must adapt dynamically to evolving industry demands. This system evaluates historical placement records, corporate hiring requirements, and student skill profiles to uncover emerging hiring trends and pressing skill deficits.",
+    challenge: "Develop an industry trend and curriculum gap analytical system that evaluates recruiting records, maps corporate compensation trends, and pinpoints where student competencies diverge from market demand.",
+    expectedOutput: "An analytical platform delivering recruiter hiring distributions, compensation tier analysis, top in-demand technical competencies, and an actionable skill deficiency matrix.",
+    functionalScope: [
+      "Recruiter participation, offer volume, and sector-wise hiring trends",
+      "Salary compensation breakdowns across engineering specializations",
+      "Competency demand mapping versus current student skill inventories",
+      "Targeted training intervention roadmap for career development cells"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+
+  // ==========================================
+  // DOMAIN 3: WEB DEVELOPMENT (4 Problems)
+  // ==========================================
+  {
+    problemId: "PS-09",
+    title: "Unified Smart Campus Platform",
+    domain: "WEB DEVELOPMENT",
+    summary: "Centralized responsive digital portal providing role-tailored student and faculty interfaces for notices, academic schedules, administrative workflows, and campus amenities.",
+    problemDescription: "Campuses frequently suffer from fragmented portals for attendance, notices, grade books, and hall bookings. This platform unifies all vital academic and institutional operations into a single cohesive, high-performance web experience with dedicated roles for students and faculty.",
+    challenge: "Architect a modern, unified web application featuring role-based dashboards, authenticated notice broadcasts, real-time timetable updates, and streamlined access to campus services.",
+    expectedOutput: "A responsive, accessible web portal providing instant context switching between student and faculty views, an interactive announcements feed with search/filters, and intuitive service request modules.",
+    functionalScope: [
+      "Role-tailored navigation and dashboards for students and faculty members",
+      "Official institutional notice board with category filters and prioritization",
+      "Academic schedule visualization and timetable management",
+      "Integrated quick links for campus services and student support"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+  {
+    problemId: "PS-10",
+    title: "Student Opportunities Hub",
+    domain: "WEB DEVELOPMENT",
+    summary: "Opportunity aggregation and lifecycle management portal tracking internships, hackathons, research grants, eligibility parameters, deadlines, and application status.",
+    problemDescription: "Students constantly miss out on competitive hackathons, industry internships, and scholarships due to unorganized announcements scattered across social media and email threads. This hub categorizes verified opportunities, allows deadline tracking, and manages application statuses in one place.",
+    challenge: "Design and implement a responsive opportunity portal that provides robust search, filtering by eligibility and category, personal bookmarks, and an interactive application pipeline tracker.",
+    expectedOutput: "A web application featuring an opportunities feed with live countdowns to deadlines, detailed opportunity specification views, bookmarked opportunities, and stage-by-stage application tracking (Applied, Shortlisted, Interview, Accepted).",
+    functionalScope: [
+      "Directory of internships, scholarships, and hackathons with verified criteria",
+      "Filtering by technical discipline, eligibility year, stipend, and deadlines",
+      "User bookmarks and custom notification alerts for approaching cut-offs",
+      "Interactive personal application tracker with status updating"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+  {
+    problemId: "PS-11",
+    title: "Campus Helpdesk & Complaint Management",
+    domain: "WEB DEVELOPMENT",
+    summary: "End-to-end ticketing and dispute resolution system with grievance filing, automated priority tagging, department routing, progress tracking, and resolution auditing.",
+    problemDescription: "Efficient campus administration requires transparent tracking of infrastructure grievances (hostel maintenance, laboratory equipment repair, Wi-Fi connectivity, sanitation). This system delivers a structured ticketing pipeline connecting students with maintenance officers.",
+    challenge: "Construct a robust issue reporting and management system supporting ticket generation with attachment uploads, priority categorization, department-based assignment, and real-time status progression.",
+    expectedOutput: "A full-featured ticketing web portal enabling students to log grievances and monitor their resolution progress in real time, paired with an administrative interface for staff assignment and status updates.",
+    functionalScope: [
+      "User grievance submission with category selection, description, and urgency",
+      "Automated ticket routing to relevant campus departments",
+      "Visual status lifecycle: Submitted -> In Progress -> Under Review -> Resolved",
+      "Departmental resolution notes, feedback ratings, and escalation tracking"
+    ],
+    rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
+    evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",
+    publicationStatus: "PUBLISHED"
+  },
+  {
+    problemId: "PS-12",
+    title: "Campus Lost & Found",
+    domain: "WEB DEVELOPMENT",
+    summary: "Community-driven property recovery platform featuring categorized item reporting, timestamped locations, search indexing, potential match suggestions, and verification workflow.",
+    problemDescription: "Lost identity cards, calculators, electronics, and keys are frequently misplaced across campus grounds with no streamlined return mechanism. This platform enables swift reporting of lost or discovered items, matches candidates using descriptive tags and locations, and facilitates safe item returns.",
+    challenge: "Build a community web application that manages lost and found listings, indexes items by category/date/location, detects potential matches between lost and found logs, and secures ownership claim verification.",
+    expectedOutput: "A responsive recovery portal showcasing active item feeds, search and tag filtering, report filing forms for lost and found items, match suggestion badges, and a secure claiming workflow.",
+    functionalScope: [
+      "Structured report logging for both lost and found belongings",
+      "Granular filtering by item category, campus location, and incident date",
+      "Algorithmic candidate match indicator comparing lost descriptions with found items",
+      "Secure claim verification procedure and recovery status lifecycle"
     ],
     rulesReferences: "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
     evaluationCriteria: "Presentation (60%), Functional Prototype (40% evaluated by AI).",

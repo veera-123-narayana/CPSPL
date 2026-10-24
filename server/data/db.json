@@ -48,11 +48,11 @@
     "status": "RUNNING",
     "durationSeconds": 5400,
     "plannedStartAt": "2026-10-29T09:00:00.000Z",
-    "startedAt": "2026-10-24T05:22:36.472Z",
+    "startedAt": "2026-10-24T10:59:02.052Z",
     "pausedAt": null,
     "accumulatedPausedSeconds": 0,
     "endedAt": null,
-    "updatedAt": "2026-10-24T05:22:36.472Z"
+    "updatedAt": "2026-10-24T10:59:02.052Z"
   },
   "problems": [
     {
@@ -72,9 +72,9 @@
       "rulesReferences": "90-Minute Prototype Building Period. Presentation 60%, Prototype 40%. Prototype evaluated by AI.",
       "evaluationCriteria": "Presentation (60%), Functional Prototype (40% evaluated by AI).",
       "publicationStatus": "PUBLISHED",
-      "publishedAt": "2026-10-24T05:22:36.456Z",
+      "publishedAt": "2026-10-24T07:19:14.591Z",
       "createdAt": "2026-10-22T16:53:17.123Z",
-      "updatedAt": "2026-10-24T05:22:36.456Z",
+      "updatedAt": "2026-10-24T07:19:14.591Z",
       "createdBy": "admin@innovrush.nbkrist.org",
       "updatedBy": "admin@innovrush.nbkrist.org"
     },
@@ -340,7 +340,7 @@
       "title": "Resilient Offline Fallback Layer",
       "description": "Prototypes must incorporate local caching or mock fallback data to maintain operational integrity in the event of upstream network timeouts or simulated API disconnections.",
       "publicationStatus": "RELEASED",
-      "releasedAt": "2026-10-24T05:22:36.490Z",
+      "releasedAt": "2026-10-24T07:19:14.613Z",
       "createdAt": "2026-10-22T16:53:17.127Z",
       "createdBy": "admin@innovrush.nbkrist.org",
       "releasedBy": "admin@innovrush.nbkrist.org"
@@ -371,6 +371,519 @@
     }
   ],
   "auditLog": [
+    {
+      "actionId": "act-1792841442352-ca746",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:30:42.352Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792841442197-z9cqh",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:30:42.197Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792841442071-n33qv",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:30:42.071Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792839817150-fmmjc",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:03:37.150Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792839542060-ywdus",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T10:59:02.060Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T10:59:02.052Z"
+      }
+    },
+    {
+      "actionId": "act-1792839538786-c737o",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_RESET",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T10:58:58.786Z",
+      "safeMetadata": {
+        "durationSeconds": 5400
+      }
+    },
+    {
+      "actionId": "act-1792839531072-ug447",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T10:58:51.072Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792839431368-s0lyh",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T10:57:11.368Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792839431251-r8wid",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T10:57:11.251Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792839431127-v0ga9",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T10:57:11.127Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792835995063-uqcqf",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:59:55.063Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792835994909-iujes",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:59:54.909Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792835994685-f21lz",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:59:54.685Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833453532-bci15",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:17:33.532Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833453323-condp",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:17:33.323Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833453169-88j4f",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:17:33.169Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833323293-e3rkv",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:15:23.293Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833323108-qdxkc",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:15:23.108Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833322774-kp4b0",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:15:22.774Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792833262485-v1rk3",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:14:22.485Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832906403-gcupm",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:08:26.403Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832906293-ppml8",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:08:26.293Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832906186-lsbz1",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:08:26.186Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832558908-8zy02",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:02:38.908Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832558708-e34mw",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:02:38.708Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832558472-kqhk5",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T09:02:38.472Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792832330577-wuym7",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_RESET",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T08:58:50.577Z",
+      "safeMetadata": {
+        "durationSeconds": 5400
+      }
+    },
+    {
+      "actionId": "act-1792832311479-i0z8y",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T08:58:31.479Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792831352612-df61p",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T08:42:32.612Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792831278069-adoqk",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T08:41:18.069Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792826354616-ohpiw",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-24T07:19:14.616Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792826354603-7usyv",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T07:19:14.603Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T07:19:14.601Z"
+      }
+    },
+    {
+      "actionId": "act-1792826354593-xhv7o",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-24T07:19:14.593Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792826354578-pnsbi",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T07:19:14.578Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792826354405-djykr",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T07:19:14.405Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792826327247-5r5y0",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_RESET",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T07:18:47.247Z",
+      "safeMetadata": {
+        "durationSeconds": 5400
+      }
+    },
+    {
+      "actionId": "act-1792826327222-6u38e",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T07:18:47.222Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792826291110-wllw8",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-24T07:18:11.110Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792826291096-om1fm",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T07:18:11.096Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T05:22:36.472Z"
+      }
+    },
+    {
+      "actionId": "act-1792826291078-w4wvn",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-24T07:18:11.078Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792826291067-2i8ja",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T07:18:11.067Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792826290943-5tziq",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T07:18:10.943Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792824258681-89vre",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "CONSTRAINTS_RELEASED",
+      "targetId": "ALL_PARTICIPANTS",
+      "timestamp": "2026-10-24T06:44:18.681Z",
+      "safeMetadata": {
+        "releasedCount": 1,
+        "constraintIds": [
+          "SC-01"
+        ]
+      }
+    },
+    {
+      "actionId": "act-1792824258663-vqt77",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "TIMER_STARTED",
+      "targetId": "OFFICIAL_TIMER",
+      "timestamp": "2026-10-24T06:44:18.663Z",
+      "safeMetadata": {
+        "durationSeconds": 5400,
+        "startedAt": "2026-10-24T05:22:36.472Z"
+      }
+    },
+    {
+      "actionId": "act-1792824258649-8eftb",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "PROBLEM_LAUNCHED",
+      "targetId": "PS-01",
+      "timestamp": "2026-10-24T06:44:18.649Z",
+      "safeMetadata": {
+        "title": "AI-Based Student Early Warning System",
+        "domain": "AI / MACHINE LEARNING"
+      }
+    },
+    {
+      "actionId": "act-1792824258633-9i9pl",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:44:18.633Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792824258477-atb9x",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:44:18.477Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792824061373-gvk8g",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T06:41:01.373Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
     {
       "actionId": "act-1792819648628-17qbx",
       "administratorId": "unknown",
