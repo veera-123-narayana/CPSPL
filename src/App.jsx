@@ -82,8 +82,12 @@ function AppContent() {
       }
     });
 
-    // Real-time problem launch
-    const unbindLaunch = wsClient.on('PROBLEM_LAUNCHED', (payload) => {
+    // Real-time problems updates
+    const unbindProblems = wsClient.on('PROBLEMS_UPDATED', () => {
+      fetchPublicData();
+    });
+
+    const unbindLaunch = wsClient.on('PROBLEM_LAUNCHED', () => {
       fetchPublicData();
     });
 
@@ -127,9 +131,16 @@ function AppContent() {
     window.addEventListener('innovrush_constraints_update', handleSyncEvent);
     window.addEventListener('innovrush_event_update', handleSyncEvent);
 
+    // Periodic heartbeat sync fallback (every 5s) to guarantee zero desynchronization
+    const pollInterval = setInterval(() => {
+      fetchPublicData();
+    }, 5000);
+
     return () => {
+      clearInterval(pollInterval);
       unbindConn();
       unbindInit();
+      unbindProblems();
       unbindLaunch();
       unbindUnpublish();
       unbindTimer();

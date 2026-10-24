@@ -58,12 +58,14 @@ function getStoredTimer() {
   return { ...defaultTimerData };
 }
 
-function saveStoredTimer(timer) {
+import { getSupabaseClient } from './supabase';
+
+function saveStoredTimer(timer, shouldBroadcast = true) {
   if (typeof window === 'undefined') return timer;
   try {
     localStorage.setItem(STORAGE_TIMER_KEY, JSON.stringify(timer));
-    if (wsClient && typeof wsClient.emit === 'function') {
-      wsClient.emit('TIMER_UPDATED', { type: 'TIMER_UPDATED', payload: { timer } });
+    if (shouldBroadcast && wsClient && typeof wsClient.broadcast === 'function') {
+      wsClient.broadcast('TIMER_UPDATED', { timer });
     }
     window.dispatchEvent(new CustomEvent('innovrush_timer_update', { detail: timer }));
   } catch (e) {
@@ -86,17 +88,16 @@ function getStoredProblems() {
   return defaultProblems;
 }
 
-function saveStoredProblems(problems, shouldEmit = true) {
+function saveStoredProblems(problems, shouldBroadcast = true) {
   if (typeof window === 'undefined') return problems;
   try {
     localStorage.setItem(STORAGE_PROBLEMS_KEY, JSON.stringify(problems));
-    if (shouldEmit) {
-      if (wsClient && typeof wsClient.emit === 'function') {
-        wsClient.emit('PROBLEM_LAUNCHED', { type: 'PROBLEM_LAUNCHED', payload: { problems } });
-        wsClient.emit('PROBLEM_UNPUBLISHED', { type: 'PROBLEM_UNPUBLISHED', payload: { problems } });
-      }
-      window.dispatchEvent(new CustomEvent('innovrush_problems_update', { detail: problems }));
+    if (shouldBroadcast && wsClient && typeof wsClient.broadcast === 'function') {
+      wsClient.broadcast('PROBLEMS_UPDATED', { problems });
+      wsClient.broadcast('PROBLEM_LAUNCHED', { problems });
+      wsClient.broadcast('PROBLEM_UNPUBLISHED', { problems });
     }
+    window.dispatchEvent(new CustomEvent('innovrush_problems_update', { detail: problems }));
   } catch (e) {
     console.warn('Error saving stored problems:', e);
   }
@@ -117,13 +118,14 @@ function getStoredConstraints() {
   return defaultConstraints;
 }
 
-function saveStoredConstraints(constraints) {
+function saveStoredConstraints(constraints, shouldBroadcast = true) {
   if (typeof window === 'undefined') return constraints;
   try {
     localStorage.setItem(STORAGE_CONSTRAINTS_KEY, JSON.stringify(constraints));
-    if (wsClient && typeof wsClient.emit === 'function') {
-      wsClient.emit('CONSTRAINTS_RELEASED', { type: 'CONSTRAINTS_RELEASED', payload: { constraints } });
+    if (shouldBroadcast && wsClient && typeof wsClient.broadcast === 'function') {
+      wsClient.broadcast('CONSTRAINTS_RELEASED', { constraints });
     }
+    window.dispatchEvent(new CustomEvent('innovrush_constraints_update', { detail: constraints }));
   } catch (e) {
     console.warn('Error saving stored constraints:', e);
   }
@@ -144,17 +146,86 @@ function getStoredEvent() {
   return defaultEventData;
 }
 
-function saveStoredEvent(evt) {
+function saveStoredEvent(evt, shouldBroadcast = true) {
   if (typeof window === 'undefined') return evt;
   try {
     localStorage.setItem(STORAGE_EVENT_KEY, JSON.stringify(evt));
-    if (wsClient && typeof wsClient.emit === 'function') {
-      wsClient.emit('EVENT_RULES_UPDATED', { type: 'EVENT_RULES_UPDATED', payload: { event: evt } });
+    if (shouldBroadcast && wsClient && typeof wsClient.broadcast === 'function') {
+      wsClient.broadcast('EVENT_RULES_UPDATED', { event: evt });
     }
+    window.dispatchEvent(new CustomEvent('innovrush_event_update', { detail: evt }));
   } catch (e) {
     console.warn('Error saving stored event:', e);
   }
   return evt;
+}
+
+// Global Peer-to-Peer & Cloud Real-Time Cross-Machine Handshake
+if (typeof window !== 'undefined' && wsClient) {
+  wsClient.on('PROBLEMS_UPDATED', (data) => {
+    const problems = data?.payload?.problems;
+    if (Array.isArray(problems)) {
+      saveStoredProblems(problems, false);
+    }
+  });
+
+  wsClient.on('PROBLEM_UNPUBLISHED', (data) => {
+    const problems = data?.payload?.problems;
+    if (Array.isArray(problems)) {
+      saveStoredProblems(problems, false);
+    }
+  });
+
+  wsClient.on('PROBLEM_LAUNCHED', (data) => {
+    const problems = data?.payload?.problems;
+    if (Array.isArray(problems)) {
+      saveStoredProblems(problems, false);
+    }
+  });
+
+  wsClient.on('TIMER_UPDATED', (data) => {
+    const timer = data?.payload?.timer;
+    if (timer) {
+      saveStoredTimer(timer, false);
+    }
+  });
+
+  wsClient.on('CONSTRAINTS_RELEASED', (data) => {
+    const constraints = data?.payload?.constraints;
+    if (Array.isArray(constraints)) {
+      saveStoredConstraints(constraints, false);
+    }
+  });
+
+  wsClient.on('EVENT_RULES_UPDATED', (data) => {
+    const evt = data?.payload?.event;
+    if (evt) {
+      saveStoredEvent(evt, false);
+    }
+  });
+
+  // Handshake: If a newly opened system requests state, any active admin sends snapshot
+  wsClient.on('REQUEST_CURRENT_STATE', () => {
+    const isAdmin = Boolean(sessionStorage.getItem(TOKEN_KEY));
+    if (isAdmin) {
+      wsClient.broadcast('STATE_SNAPSHOT', {
+        problems: getStoredProblems(),
+        timer: getStoredTimer(),
+        constraints: getStoredConstraints(),
+        event: getStoredEvent()
+      });
+    }
+  });
+
+  wsClient.on('STATE_SNAPSHOT', (data) => {
+    const snapshot = data?.payload;
+    if (snapshot) {
+      if (Array.isArray(snapshot.problems)) saveStoredProblems(snapshot.problems, false);
+      if (snapshot.timer) saveStoredTimer(snapshot.timer, false);
+      if (Array.isArray(snapshot.constraints)) saveStoredConstraints(snapshot.constraints, false);
+      if (snapshot.event) saveStoredEvent(snapshot.event, false);
+    }
+  });
 }
 
 function addStoredAudit(action) {

@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Timer, ShieldAlert, Award, FileText, Zap, ChevronRight, RotateCcw } from 'lucide-react';
 import { sounds } from '../audio/sounds';
 
 export default function Header({ eventStatus, timerState, onReplayIntro }) {
   const location = useLocation();
-  const navigate = useNavigate();
-  const [adminTooltip, setAdminTooltip] = useState(false);
 
   // Format seconds to HH:MM:SS
   const formatTimer = (totalSeconds = 0) => {
@@ -110,38 +108,6 @@ export default function Header({ eventStatus, timerState, onReplayIntro }) {
             }`} />
             <span className="text-softwhite/90 uppercase">{eventStatus || 'WAITING'}</span>
           </div>
-
-          {/* ======================================================== */}
-          {/* DISCREET GLOWING ADMIN ACCESS INDICATOR DOT (Section 2.B) */}
-          {/* ======================================================== */}
-          <div className="relative ml-2 flex items-center justify-center">
-            <button
-              onClick={() => {
-                sounds.playClick();
-                navigate('/admin/login');
-              }}
-              onMouseEnter={() => {
-                sounds.playHover();
-                setAdminTooltip(true);
-              }}
-              onMouseLeave={() => setAdminTooltip(false)}
-              aria-label="Admin Access"
-              className="relative p-2.5 focus:outline-none group cursor-pointer"
-            >
-              {/* Tiny gold/neon-yellow glowing dot */}
-              <div className="w-2.5 h-2.5 rounded-full bg-metallic-gold shadow-[0_0_8px_#FFD84D] group-hover:scale-125 group-hover:bg-metallic-bright group-hover:shadow-[0_0_14px_#FFD84D] transition-all duration-300" />
-              {/* Animated surrounding ring on hover */}
-              <div className="absolute inset-1 rounded-full border border-metallic-gold/0 group-hover:border-metallic-bright/80 group-hover:scale-125 transition-all duration-300 animate-spin" style={{ animationDuration: '6s' }} />
-            </button>
-
-            {/* Subtle Tooltip "Admin Access" */}
-            {adminTooltip && (
-              <div className="absolute right-0 top-10 z-50 whitespace-nowrap px-2.5 py-1 rounded bg-deepspace/95 border border-metallic-gold/40 text-[11px] font-mono text-metallic-bright shadow-gold-sm pointer-events-none transition-all">
-                Admin Access
-              </div>
-            )}
-          </div>
-
         </div>
 
       </div>

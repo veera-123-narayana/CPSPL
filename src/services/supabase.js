@@ -7,9 +7,12 @@ export const AUTHORIZED_ADMIN_EMAIL = (typeof import.meta !== 'undefined' && imp
 const STORAGE_KEY_URL = 'innovrush_supabase_url';
 const STORAGE_KEY_KEY = 'innovrush_supabase_key';
 
+export const DEFAULT_SUPABASE_URL = 'https://tkjeyrsgdtvexalnoife.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRramV5cnNnZHR2ZXhhbG5vaWZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4MTM3MDQsImV4cCI6MjEwODM4OTcwNH0.-zRXarY6DFNc0JL5rsdMPP5VsTH8GxlU4Mp9HqO6owo';
+
 export function getSupabaseConfig() {
   if (typeof window === 'undefined') {
-    return { url: '', key: '', isConfigured: false, adminEmail: AUTHORIZED_ADMIN_EMAIL };
+    return { url: DEFAULT_SUPABASE_URL, key: DEFAULT_SUPABASE_ANON_KEY, isConfigured: true, adminEmail: AUTHORIZED_ADMIN_EMAIL };
   }
 
   const envUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_SUPABASE_URL) || '';
@@ -18,8 +21,8 @@ export function getSupabaseConfig() {
   const localUrl = localStorage.getItem(STORAGE_KEY_URL) || '';
   const localKey = localStorage.getItem(STORAGE_KEY_KEY) || '';
 
-  const url = localUrl || envUrl;
-  const key = localKey || envKey;
+  const url = localUrl || envUrl || DEFAULT_SUPABASE_URL;
+  const key = localKey || envKey || DEFAULT_SUPABASE_ANON_KEY;
 
   return {
     url,

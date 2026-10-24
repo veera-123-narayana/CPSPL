@@ -372,6 +372,70 @@
   ],
   "auditLog": [
     {
+      "actionId": "act-1792844351128-q3iez",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T12:19:11.128Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792844351017-mu63a",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T12:19:11.017Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792844350897-gef6m",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T12:19:10.897Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792842391518-bayi9",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_SUCCESS",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:46:31.518Z",
+      "safeMetadata": {
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792842391327-scps7",
+      "administratorId": "admin@innovrush.nbkrist.org",
+      "actionType": "LOGIN_FAILED",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:46:31.327Z",
+      "safeMetadata": {
+        "email": "admin@innovrush.nbkrist.org",
+        "ip": "::1"
+      }
+    },
+    {
+      "actionId": "act-1792842391213-lqia2",
+      "administratorId": "unknown",
+      "actionType": "UNAUTHORIZED_LOGIN_ATTEMPT",
+      "targetId": "AUTH",
+      "timestamp": "2026-10-24T11:46:31.213Z",
+      "safeMetadata": {
+        "attemptedEmail": "student_team1@test.com",
+        "ip": "::1"
+      }
+    },
+    {
       "actionId": "act-1792841442352-ca746",
       "administratorId": "admin@innovrush.nbkrist.org",
       "actionType": "LOGIN_SUCCESS",
