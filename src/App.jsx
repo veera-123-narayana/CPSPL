@@ -25,6 +25,7 @@ import AdminAuditLog from './pages/admin/AdminAuditLog';
 import { api } from './services/api';
 import { wsClient } from './services/websocket';
 import { sounds } from './audio/sounds';
+import { defaultEventData, defaultTimerData, defaultProblems } from './data/defaultEventData';
 
 function AppContent() {
   const location = useLocation();
@@ -40,14 +41,9 @@ function AppContent() {
     return true;
   });
 
-  const [eventData, setEventData] = useState(null);
-  const [timerState, setTimerState] = useState({
-    status: 'WAITING',
-    durationSeconds: 5400,
-    remainingSeconds: 5400,
-    startedAt: null
-  });
-  const [problems, setProblems] = useState([]);
+  const [eventData, setEventData] = useState(defaultEventData);
+  const [timerState, setTimerState] = useState(defaultTimerData);
+  const [problems, setProblems] = useState(defaultProblems);
   const [isWsConnected, setIsWsConnected] = useState(false);
   const [constraintUnlockPayload, setConstraintUnlockPayload] = useState(null);
 
