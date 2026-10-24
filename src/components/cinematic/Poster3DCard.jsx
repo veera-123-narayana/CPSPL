@@ -48,7 +48,7 @@ export default function Poster3DCard({
         />
 
         {/* 3D POSTER FRAME WRAPPER */}
-        <div className="relative w-[320px] sm:w-[420px] md:w-[480px] lg:w-[520px] max-w-[88vw] max-h-[62vh] aspect-square rounded-2xl overflow-hidden border-2 border-metallic-gold/80 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_50px_rgba(212,167,44,0.35)] bg-obsidian preserve-3d group">
+        <div className="relative w-[340px] sm:w-[460px] md:w-[540px] lg:w-[580px] aspect-square rounded-2xl overflow-hidden border-2 border-metallic-gold/80 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_50px_rgba(212,167,44,0.35)] bg-obsidian preserve-3d group">
           
           {/* ============================================================ */}
           {/* LAYER 0: OFFICIAL POSTER BASE IMAGE (Z = 0px)                */}

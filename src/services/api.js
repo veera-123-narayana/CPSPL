@@ -2,8 +2,6 @@
  * INNOVRUSH 2K26 — API Client Service
  */
 
-import { defaultEventData, defaultTimerData, defaultProblems } from '../data/defaultEventData';
-
 const API_BASE = '/api';
 
 // Admin Token Management (stored in sessionStorage so it clears on browser close)
@@ -59,36 +57,11 @@ async function request(url, options = {}) {
 
 export const api = {
   // Public APIs
-  getPublicEvent: async () => {
-    try {
-      return await request('/public/event');
-    } catch {
-      return defaultEventData;
-    }
-  },
-  getPublicTimer: async () => {
-    try {
-      return await request('/public/timer');
-    } catch {
-      return defaultTimerData;
-    }
-  },
-  getPublicProblems: async () => {
-    try {
-      const data = await request('/public/problems');
-      return Array.isArray(data) && data.length > 0 ? data : defaultProblems;
-    } catch {
-      return defaultProblems;
-    }
-  },
-  getPublicProblemDetail: async (problemId) => {
-    try {
-      return await request(`/public/problems/${problemId}`);
-    } catch {
-      return defaultProblems.find(p => p.problemId === problemId) || null;
-    }
-  },
-  getPublicConstraints: () => request('/public/constraints').catch(() => []),
+  getPublicEvent: () => request('/public/event'),
+  getPublicTimer: () => request('/public/timer'),
+  getPublicProblems: () => request('/public/problems'),
+  getPublicProblemDetail: (problemId) => request(`/public/problems/${problemId}`),
+  getPublicConstraints: () => request('/public/constraints'),
 
   // Admin APIs
   adminLogin: async (email, password) => {
