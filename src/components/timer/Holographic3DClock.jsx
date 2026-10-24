@@ -30,9 +30,9 @@ export default function Holographic3DClock({
   const containerRef = useRef(null);
 
   // Calculate live values
-  const percentRemaining = durationSeconds > 0
+  const percentRemaining = (durationSeconds > 0 && typeof remainingSeconds === 'number')
     ? Math.max(0, Math.min(100, Math.round((remainingSeconds / durationSeconds) * 100)))
-    : 0;
+    : (status === 'WAITING' ? 100 : 0);
 
   // 60-Second Loop Countdown (matching JSON config)
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function Holographic3DClock({
 
   // Target value for the active display
   const targetValue = viewMode === 'percent'
-    ? (percentRemaining || 58)
+    ? (typeof percentRemaining === 'number' && !isNaN(percentRemaining) ? percentRemaining : (status === 'WAITING' ? 100 : 0))
     : viewMode === 'seconds_loop'
     ? sixtySecCountdown
     : mins;

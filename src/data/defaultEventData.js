@@ -158,3 +158,42 @@ export const defaultProblems = [
     publicationStatus: "PUBLISHED"
   }
 ];
+
+export const defaultConstraints = [
+  {
+    constraintId: "SC-01",
+    scope: "ALL DOMAINS",
+    problemId: null,
+    title: "Resilient Offline Fallback Layer",
+    description: "Prototypes must incorporate local caching or mock fallback data to maintain operational integrity in the event of upstream network timeouts or simulated API disconnections.",
+    publicationStatus: "DRAFT",
+    releasedAt: null,
+    createdAt: "2026-10-24T05:00:00.000Z",
+    createdBy: "admin@innovrush.nbkrist.org",
+    releasedBy: null
+  },
+  {
+    constraintId: "SC-02",
+    scope: "AI / MACHINE LEARNING",
+    problemId: "PS-01",
+    title: "Sub-Second Inference Latency Guardrail",
+    description: "The early warning assessment engine must return normalized risk levels and causal explanation breakdowns within 1.5 seconds per cohort query batch.",
+    publicationStatus: "DRAFT",
+    releasedAt: null,
+    createdAt: "2026-10-24T05:00:00.000Z",
+    createdBy: "admin@innovrush.nbkrist.org",
+    releasedBy: null
+  },
+  {
+    constraintId: "SC-03",
+    scope: "WEB DEVELOPMENT",
+    problemId: "PS-09",
+    title: "Keyboard-First Accessibility Protocol",
+    description: "All primary portal interactions (notice filtering, schedule switching, service requests) must be fully navigable via keyboard with distinct focus rings and zero mouse reliance.",
+    publicationStatus: "DRAFT",
+    releasedAt: null,
+    createdAt: "2026-10-24T05:00:00.000Z",
+    createdBy: "admin@innovrush.nbkrist.org",
+    releasedBy: null
+  }
+];

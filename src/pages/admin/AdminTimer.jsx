@@ -26,10 +26,13 @@ export default function AdminTimer() {
       setLoading(true);
       const res = await api.getPublicTimer();
       setTimer(res);
-      setServerTime(res.serverTime);
-      setDurationMinutes(Math.floor(res.durationSeconds / 60));
+      setServerTime(res?.serverTime || new Date().toISOString());
+      const durSecs = (res && typeof res.durationSeconds === 'number' && !isNaN(res.durationSeconds)) ? res.durationSeconds : 5400;
+      const mins = Math.floor(durSecs / 60);
+      setDurationMinutes(mins > 0 ? mins : 90);
     } catch (e) {
       console.error(e);
+      setDurationMinutes(90);
     } finally {
       setLoading(false);
     }
@@ -294,7 +297,7 @@ export default function AdminTimer() {
               </h3>
             </div>
             <p className="text-xs text-mutedsilver font-light mb-4 leading-relaxed">
-              Are you sure you want to reset the authoritative clock to {durationMinutes} minutes? All connected participant clocks will be reset to the ready state.
+              Are you sure you want to reset the authoritative clock to {durationMinutes || 90} minutes? All connected participant clocks will be reset to the ready state.
             </p>
             <div className="flex justify-end gap-3 pt-3 border-t border-white/10 font-mono text-xs">
               <button
