@@ -86,12 +86,16 @@ function getStoredProblems() {
   return defaultProblems;
 }
 
-function saveStoredProblems(problems) {
+function saveStoredProblems(problems, shouldEmit = true) {
   if (typeof window === 'undefined') return problems;
   try {
     localStorage.setItem(STORAGE_PROBLEMS_KEY, JSON.stringify(problems));
-    if (wsClient && typeof wsClient.emit === 'function') {
-      wsClient.emit('PROBLEM_LAUNCHED', { type: 'PROBLEM_LAUNCHED', payload: { problems } });
+    if (shouldEmit) {
+      if (wsClient && typeof wsClient.emit === 'function') {
+        wsClient.emit('PROBLEM_LAUNCHED', { type: 'PROBLEM_LAUNCHED', payload: { problems } });
+        wsClient.emit('PROBLEM_UNPUBLISHED', { type: 'PROBLEM_UNPUBLISHED', payload: { problems } });
+      }
+      window.dispatchEvent(new CustomEvent('innovrush_problems_update', { detail: problems }));
     }
   } catch (e) {
     console.warn('Error saving stored problems:', e);
@@ -267,18 +271,22 @@ export const api = {
   getPublicProblems: async () => {
     try {
       const data = await request('/public/problems');
-      if (Array.isArray(data) && data.length >= 12) {
-        return data;
-      }
-      if (Array.isArray(data) && data.length > 0) {
-        const serverIds = new Set(data.map(p => p.problemId));
-        return [...data, ...defaultProblems.filter(p => !serverIds.has(p.problemId))];
+      if (Array.isArray(data)) {
+        // Sync server published state into local storage
+        const current = getStoredProblems();
+        const publishedIds = new Set(data.map(p => p.problemId));
+        const synced = current.map(p => ({
+          ...p,
+          publicationStatus: publishedIds.has(p.problemId) ? 'PUBLISHED' : 'DRAFT'
+        }));
+        saveStoredProblems(synced, false);
+        return data.filter(p => p.publicationStatus === 'PUBLISHED');
       }
     } catch {
-      // Netlify static fallback
+      // Netlify static / offline fallback
     }
     const stored = getStoredProblems();
-    return (Array.isArray(stored) && stored.length >= 12) ? stored : defaultProblems;
+    return stored.filter(p => p.publicationStatus === 'PUBLISHED');
   },
 
   getPublicProblemDetail: async (problemId) => {
@@ -416,38 +424,38 @@ export const api = {
   },
 
   launchProblem: async (problemId) => {
+    const current = getStoredProblems();
+    const updated = current.map(p => p.problemId === problemId ? { ...p, publicationStatus: 'PUBLISHED', publishedAt: new Date().toISOString() } : p);
+    saveStoredProblems(updated);
+    addStoredAudit({ actionType: 'PROBLEM_LAUNCHED', targetId: problemId });
     try {
       return await request(`/admin/problems/${problemId}/launch`, { method: 'POST' });
     } catch {
-      const current = getStoredProblems();
-      const updated = current.map(p => p.problemId === problemId ? { ...p, publicationStatus: 'PUBLISHED' } : p);
-      saveStoredProblems(updated);
-      addStoredAudit({ actionType: 'PROBLEM_LAUNCHED', targetId: problemId });
       return { success: true, message: `Problem ${problemId} launched to all participants!` };
     }
   },
 
   unpublishProblem: async (problemId) => {
+    const current = getStoredProblems();
+    const updated = current.map(p => p.problemId === problemId ? { ...p, publicationStatus: 'DRAFT', publishedAt: null } : p);
+    saveStoredProblems(updated);
+    addStoredAudit({ actionType: 'PROBLEM_UNPUBLISHED', targetId: problemId });
     try {
       return await request(`/admin/problems/${problemId}/unpublish`, { method: 'POST' });
     } catch {
-      const current = getStoredProblems();
-      const updated = current.map(p => p.problemId === problemId ? { ...p, publicationStatus: 'DRAFT' } : p);
-      saveStoredProblems(updated);
-      addStoredAudit({ actionType: 'PROBLEM_UNPUBLISHED', targetId: problemId });
       return { success: true, message: `Problem statement ${problemId} reverted to draft.` };
     }
   },
 
   bulkLaunchProblems: async (problemIds = []) => {
+    const current = getStoredProblems();
+    const idsSet = new Set(problemIds && problemIds.length > 0 ? problemIds : current.map(p => p.problemId));
+    const updated = current.map(p => idsSet.has(p.problemId) ? { ...p, publicationStatus: 'PUBLISHED', publishedAt: new Date().toISOString() } : p);
+    saveStoredProblems(updated);
+    addStoredAudit({ actionType: 'BULK_PROBLEMS_LAUNCHED', targetId: 'ALL' });
     try {
       return await request('/admin/problems/launch-all', { method: 'POST', body: JSON.stringify({ problemIds }) });
     } catch {
-      const current = getStoredProblems();
-      const idsSet = new Set(problemIds && problemIds.length > 0 ? problemIds : current.map(p => p.problemId));
-      const updated = current.map(p => idsSet.has(p.problemId) ? { ...p, publicationStatus: 'PUBLISHED' } : p);
-      saveStoredProblems(updated);
-      addStoredAudit({ actionType: 'BULK_PROBLEMS_LAUNCHED', targetId: 'ALL' });
       return { success: true, message: 'All selected challenge problems published successfully!' };
     }
   },

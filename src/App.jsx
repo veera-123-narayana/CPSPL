@@ -116,6 +116,17 @@ function AppContent() {
       setEventData(prev => ({ ...prev, rules: payload.payload?.rules }));
     });
 
+    // Cross-tab and intra-window real-time event listeners
+    const handleSyncEvent = () => {
+      fetchPublicData();
+    };
+
+    window.addEventListener('storage', handleSyncEvent);
+    window.addEventListener('innovrush_problems_update', handleSyncEvent);
+    window.addEventListener('innovrush_timer_update', handleSyncEvent);
+    window.addEventListener('innovrush_constraints_update', handleSyncEvent);
+    window.addEventListener('innovrush_event_update', handleSyncEvent);
+
     return () => {
       unbindConn();
       unbindInit();
@@ -125,8 +136,18 @@ function AppContent() {
       unbindConstraints();
       unbindStatus();
       unbindRules();
+      window.removeEventListener('storage', handleSyncEvent);
+      window.removeEventListener('innovrush_problems_update', handleSyncEvent);
+      window.removeEventListener('innovrush_timer_update', handleSyncEvent);
+      window.removeEventListener('innovrush_constraints_update', handleSyncEvent);
+      window.removeEventListener('innovrush_event_update', handleSyncEvent);
     };
   }, []);
+
+  // Always synchronize public data whenever navigating routes (e.g. returning from /admin to /challenges or /)
+  useEffect(() => {
+    fetchPublicData();
+  }, [location.pathname]);
 
   // Client-side local 1-second timer tick when running
   useEffect(() => {
