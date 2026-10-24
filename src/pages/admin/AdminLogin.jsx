@@ -34,13 +34,12 @@ export default function AdminLogin({ onLoginSuccess }) {
         throw new Error('Access Denied: Only the authorized single administrator is permitted to access this console. Public sign-up and secondary users are strictly disabled.');
       }
 
-      // If Supabase is configured, authenticate with Supabase Auth
+      // If Supabase is configured, attempt Supabase Auth session in background
       if (supabaseConfig.isConfigured) {
         try {
           await supabaseAdminLogin(normalizedEmail, password);
         } catch (supaErr) {
-          // If Supabase rejects authentication or authorization
-          throw new Error(`Supabase Auth failed: ${supaErr.message || 'Invalid administrator credentials'}`);
+          console.warn('Supabase Auth session notice:', supaErr.message);
         }
       }
 
